@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
-exec "${PYTHON_BIN}" - $@ << EOT
+#!/usr/bin/env python3
+
 import sys
 import os.path
 
@@ -16,4 +16,3 @@ else:
         sys.stdout.write('{} lines in {}\n'.format(len(lines), fname))
     else:
         sys.stdout.write('{} not found\n'.format(fname))
-EOT
