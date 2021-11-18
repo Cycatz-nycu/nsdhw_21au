@@ -28,14 +28,20 @@ public:
     ~Matrix() { delete[] m_elems; }
 
     double& operator() (size_t i, size_t j) {
-        if (i >= m_nrow || j >= m_ncol)
-            throw std::out_of_range("matrix index out of range");
+        /*
+            Remove this check to speed up the performance
+            if (i >= m_nrow || j >= m_ncol)
+                throw std::out_of_range("matrix index out of range");
+        */
         return m_elems[i * m_ncol + j];
     }
 
     double operator() (size_t i, size_t j) const {
-        if (i >= m_nrow || j >= m_ncol)
-            throw std::out_of_range("matrix index out of range");
+        /*
+            Remove this check to speed up the performance
+            if (i >= m_nrow || j >= m_ncol)
+                throw std::out_of_range("matrix index out of range");
+        */
         return m_elems[i * m_ncol + j];
     }
 
